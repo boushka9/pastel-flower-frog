@@ -76,6 +76,10 @@ header h1 {
     background-color: var(--light);
 }
 
+a[href] {
+    text-decoration: none;
+}
+
 /* On larger screens sizing grows to fit */
 @media  screen and (min-width: 786px)  {
     header {
