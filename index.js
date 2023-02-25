@@ -1,4 +1,4 @@
-// Modules
+// Node packages
 const inquirer = require('inquirer');
 const fs = require('fs');
 const path = require('path');
@@ -9,6 +9,7 @@ const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 const Manager = require('./lib/Manager');
 
+// Use to connect html template with prompt response
 const generateTeamString = require('./src/template')
 
 // Set absolute path btw current directory and 'dist' for generated HTML 
@@ -258,10 +259,11 @@ function initPrompt() {
 
     // Exit opt. = exit the application, and the HTML is generated
     generateHtml = () => {
+        //Info from user input is passed into the html in template.js and returned as 'finalString' = html template + userTeam info
         const finalString =  generateTeamString(userTeam);
 
         console.log(userTeam);
-        //takes in filepath, generated information, and error for callback
+        //Write file in filepath with generated information, and error for callback, else console success msg
         fs.writeFile(generatePath, finalString, err => {
             if (err) return err
             console.info("Your team profile has been generated!");
