@@ -1,7 +1,7 @@
 // Modules
 const inquirer = require('inquirer');
+const fs = require('fs');
 const path = require('path');
-const jest = require('jest');
 
 // Constructors for employee, engineer, intern, and manager class'
 const Employee = require('./lib/Employee');
@@ -9,16 +9,18 @@ const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 const Manager = require('./lib/Manager');
 
+const generateTeamString = require('./src/template')
+
 // Set absolute path btw current directory and 'dist' for generated HTML 
 const DIST_DIR = path.resolve(__dirname, 'dist')
 // Join path segments and normalize resulting path
 const generatePath = path.join(DIST_DIR, 'index.html');
 
 
-//Empty array to push user responses onto
+// Empty array to push user responses into
 const userTeam = [];
 
-// Prompt arrays (TBA)
+// Prompt arrays 
 const managerPrompt = [
     {
         type: "input",
@@ -201,11 +203,11 @@ function initPrompt() {
             const managerInfo = new Manager(answers.managerName, answers.managerId, answers.managerEmail, answers.managerOffice)
             // push managerInfo into empty array
             userTeam.push(managerInfo);
-            // then run..
+            // then show user the nav menu
             teamMenu()
         })
     }
-    // Call add manager
+    // Call addManager = first user prompt
     addManager();
 
     // Prompt user with a menu with the option to add an engineer or an intern or to finish building my team
@@ -256,8 +258,14 @@ function initPrompt() {
 
     // Exit opt. = exit the application, and the HTML is generated
     generateHtml = () => {
+        const finalString =  generateTeamString(userTeam);
+
         console.log(userTeam);
-        console.info("Your team profile has been generated!");
+        //takes in filepath, generated information, and error for callback
+        fs.writeFile(generatePath, finalString, err => {
+            if (err) return err
+            console.info("Your team profile has been generated!");
+        });
     }
 }
 
