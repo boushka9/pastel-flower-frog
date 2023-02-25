@@ -36,53 +36,52 @@ const generateTeam = myTeam => {
 
     // Get managers
     const generateManager = myTeam => {
-        return `
-        <div class="card card-body manager-card" style="width: 18rem;">
-            <h3 class="card-title">${myTeam.name}</h3>
-            <h4 class="card-text manager">
-                Manager
-                <i class="fa-solid fa-briefcase"></i>
-            </h4>
-            <ul class="list-group list-group-flush card-info">
-              <li class="list-group-item">ID: ${myTeam.id}</li>
-              <li class="list-group-item"><a class="manager" href="mailto:${myTeam.email}">Email: ${myTeam.email}</a></li>
-              <li class="list-group-item">Office Number: ${myTeam.officeNumber}</li>
-            </ul>
-        </div>`
+        return `<div class="card card-body manager-card" style="width: 18rem;">
+                    <h3 class="card-title">${myTeam.name}</h3>
+                    <h4 class="card-text manager">
+                        Manager
+                        <i class="fa-solid fa-briefcase"></i>
+                    </h4>
+                    <ul class="list-group list-group-flush card-info">
+                      <li class="list-group-item">ID: ${myTeam.id}</li>
+                      <li class="list-group-item"><a class="manager" href="mailto:${myTeam.email}">Email: ${myTeam.email}</a></li>
+                      <li class="list-group-item">Office Number: ${myTeam.officeNumber}</li>
+                    </ul>
+                </div>`
     }
 
     // Get engineers
     const generateEngineer = myTeam => {
         return `
-        <div class="card card-body engineer-card" style="width: 18rem;">
-            <h3 class="card-title">${myTeam.name}</h3>
-            <h4 class="card-text engineer">
-                Engineer
-                <i class="fa-solid fa-glasses"></i>
-            </h4>
-            <ul class="list-group list-group-flush card-info">
-              <li class="list-group-item">ID: ${myTeam.id}</li>
-              <li class="list-group-item"><a class="engineer" href="mailto:${myTeam.email}">Email: ${myTeam.email}</a></li>
-              <li class="list-group-item"><a class="engineer" target="_blank" href="https://github.com/${myTeam.github}">GitHub: ${myTeam.github}</a></li>
-            </ul>
-        </div>`
+                <div class="card card-body engineer-card" style="width: 18rem;">
+                    <h3 class="card-title">${myTeam.name}</h3>
+                    <h4 class="card-text engineer">
+                        Engineer
+                        <i class="fa-solid fa-glasses"></i>
+                    </h4>
+                    <ul class="list-group list-group-flush card-info">
+                      <li class="list-group-item">ID: ${myTeam.id}</li>
+                      <li class="list-group-item"><a class="engineer" href="mailto:${myTeam.email}">Email: ${myTeam.email}</a></li>
+                      <li class="list-group-item"><a class="engineer" target="_blank" href="https://github.com/${myTeam.github}">GitHub: ${myTeam.github}</a></li>
+                    </ul>
+                </div>`
     }
 
     // Get Interns
     const generateIntern = myTeam => {
         return `
-        <div class="card card-body intern-card" style="width: 18rem;">
-            <h3 class="card-title">${myTeam.name}</h3>
-            <h4 class="card-text intern">
-                Intern
-                <i class="fa-solid fa-school"></i>
-            </h4>
-            <ul class="list-group list-group-flush card-info">
-              <li class="list-group-item">ID: ${myTeam.id}</li>
-              <li class="list-group-item"><a class="intern" href="mailto:${myTeam.email}">Email: ${myTeam.email}</a></li>
-              <li class="list-group-item">School: ${myTeam.school}</li>
-            </ul>
-        </div>`    
+                <div class="card card-body intern-card" style="width: 18rem;">
+                    <h3 class="card-title">${myTeam.name}</h3>
+                    <h4 class="card-text intern">
+                        Intern
+                        <i class="fa-solid fa-school"></i>
+                    </h4>
+                    <ul class="list-group list-group-flush card-info">
+                      <li class="list-group-item">ID: ${myTeam.id}</li>
+                      <li class="list-group-item"><a class="intern" href="mailto:${myTeam.email}">Email: ${myTeam.email}</a></li>
+                      <li class="list-group-item">School: ${myTeam.school}</li>
+                    </ul>
+                </div>`
     }
 
     // Target each item in myTeam array, if the role = engineer, pass through to the generateEngineer function and set finalTeam = finalTeam + generateManager(employee) (to maintain order wo repeats)
