@@ -5,7 +5,6 @@ font-family: 'Nanum Myeongjo', serif; */
     --live: #06D6A0;
     --bright: #1B9AAA;
     --contrast: #EF476F;
-    --muted: #435f78;
     --energy: #fbcb64;
 }
 
@@ -27,6 +26,7 @@ header h1 {
     font-family: 'Montserrat', sans-serif;
 }
 
+/* Container for employee cards = centered, wraps if necessary, and spaced evenly */
 .card-deck {
     display: flex;
     flex-wrap: wrap;
@@ -37,12 +37,14 @@ header h1 {
     width: fit-content;
 }
 
+/* Individual cards do not grow to fit .card-deck container */
 .card-body {
     text-align: center;
     flex: 0 0 auto;
     justify-content: space-around;
 }
 
+/* Each employee type has an assigned color */
 .manager-card {
     border: 2px solid var(--contrast);
     box-shadow: 1.9px 3.8px 3.8px var(--light);
@@ -74,7 +76,7 @@ header h1 {
     background-color: var(--light);
 }
 
-
+/* On larger screens sizing grows to fit */
 @media  screen and (min-width: 786px)  {
     header {
         font-size: 50px;

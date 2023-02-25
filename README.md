@@ -72,7 +72,7 @@
 
   Tests for this application were created using Jest. The tests target the classes 'Employee', 'Manager', 'Engineer', and 'Intern' to determine that the new classes are being created correctly and that their content is being stored and accessed as expected. To run the tests type 'npm test' in the terminal.
 
-  <img src="./assets/imgs/tests.png" alt="Example prompts" width="400"/>
+  <img src="./assets/imgs/tests.png" alt="Tests succeeded" width="400"/>
 
   ## Questions
 

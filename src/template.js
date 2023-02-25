@@ -29,62 +29,63 @@ module.exports = myTeam => {
     </html>`
 }
 
-// Generate Team with user input
+// Generate Team with user input and pass into HTML boilerplate
 const generateTeam = myTeam => {
    // Empty string to pass results into
    let finalTeam = "";
 
-    //get manager
+    // Get managers
     const generateManager = myTeam => {
         return `
         <div class="card card-body manager-card" style="width: 18rem;">
-        <h3 class="card-title">${myTeam.name}</h3>
-        <h4 class="card-text manager">
-            Manager
-            <i class="fa-solid fa-briefcase"></i>
-        </h4>
-        <ul class="list-group list-group-flush card-info">
-          <li class="list-group-item">ID: ${myTeam.id}</li>
-          <li class="list-group-item">Email: ${myTeam.email}</li>
-          <li class="list-group-item">Office Number: ${myTeam.officeNumber}</li>
-        </ul>
-    </div>
-    `
+            <h3 class="card-title">${myTeam.name}</h3>
+            <h4 class="card-text manager">
+                Manager
+                <i class="fa-solid fa-briefcase"></i>
+            </h4>
+            <ul class="list-group list-group-flush card-info">
+              <li class="list-group-item">ID: ${myTeam.id}</li>
+              <li class="list-group-item">Email: ${myTeam.email}</li>
+              <li class="list-group-item">Office Number: ${myTeam.officeNumber}</li>
+            </ul>
+        </div>`
     }
 
+    // Get engineers
     const generateEngineer = myTeam => {
         return `
         <div class="card card-body engineer-card" style="width: 18rem;">
-        <h3 class="card-title">${myTeam.name}</h3>
-        <h4 class="card-text engineer">
-            Engineer
-            <i class="fa-solid fa-glasses"></i>
-        </h4>
-        <ul class="list-group list-group-flush card-info">
-          <li class="list-group-item">ID: ${myTeam.id}</li>
-          <li class="list-group-item">Email: ${myTeam.email}</li>
-          <li class="list-group-item">GitHub: ${myTeam.github}</li>
-        </ul>
-    </div>
-    `
+            <h3 class="card-title">${myTeam.name}</h3>
+            <h4 class="card-text engineer">
+                Engineer
+                <i class="fa-solid fa-glasses"></i>
+            </h4>
+            <ul class="list-group list-group-flush card-info">
+              <li class="list-group-item">ID: ${myTeam.id}</li>
+              <li class="list-group-item">Email: ${myTeam.email}</li>
+              <li class="list-group-item">GitHub: ${myTeam.github}</li>
+            </ul>
+        </div>`
     }
 
+    // Get Interns
     const generateIntern = myTeam => {
         return `
         <div class="card card-body intern-card" style="width: 18rem;">
-        <h3 class="card-title">${myTeam.name}</h3>
-        <h4 class="card-text intern">
-            Intern
-            <i class="fa-solid fa-school"></i>
-        </h4>
-        <ul class="list-group list-group-flush card-info">
-          <li class="list-group-item">ID: ${myTeam.id}</li>
-          <li class="list-group-item">Email: ${myTeam.email}</li>
-          <li class="list-group-item">School: ${myTeam.school}</li>
-        </ul>
-    </div>`    
+            <h3 class="card-title">${myTeam.name}</h3>
+            <h4 class="card-text intern">
+                Intern
+                <i class="fa-solid fa-school"></i>
+            </h4>
+            <ul class="list-group list-group-flush card-info">
+              <li class="list-group-item">ID: ${myTeam.id}</li>
+              <li class="list-group-item">Email: ${myTeam.email}</li>
+              <li class="list-group-item">School: ${myTeam.school}</li>
+            </ul>
+        </div>`    
     }
 
+    // Target each item in myTeam array, if the role = engineer, pass through to the generateEngineer function and set finalTeam = finalTeam + generateManager(employee) (to maintain order wo repeats)
     myTeam.forEach(employee => {
         switch(employee.role) {
             case 'Manager':
