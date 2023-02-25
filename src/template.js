@@ -81,7 +81,7 @@ const generateTeam = myTeam => {
                       <li class="list-group-item"><a class="intern" href="mailto:${myTeam.email}">Email: ${myTeam.email}</a></li>
                       <li class="list-group-item">School: ${myTeam.school}</li>
                     </ul>
-                </div>`    
+                </div>`
     }
 
     // Target each item in myTeam array, if the role = engineer, pass through to the generateEngineer function and set finalTeam = finalTeam + generateManager(employee) (to maintain order wo repeats)
