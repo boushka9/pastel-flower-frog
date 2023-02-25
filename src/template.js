@@ -45,7 +45,7 @@ const generateTeam = myTeam => {
             </h4>
             <ul class="list-group list-group-flush card-info">
               <li class="list-group-item">ID: ${myTeam.id}</li>
-              <li class="list-group-item">Email: ${myTeam.email}</li>
+              <li class="list-group-item"><a class="manager" href="mailto:${myTeam.email}">Email: ${myTeam.email}</a></li>
               <li class="list-group-item">Office Number: ${myTeam.officeNumber}</li>
             </ul>
         </div>`
@@ -62,8 +62,8 @@ const generateTeam = myTeam => {
             </h4>
             <ul class="list-group list-group-flush card-info">
               <li class="list-group-item">ID: ${myTeam.id}</li>
-              <li class="list-group-item">Email: ${myTeam.email}</li>
-              <li class="list-group-item">GitHub: ${myTeam.github}</li>
+              <li class="list-group-item"><a class="engineer" href="mailto:${myTeam.email}">Email: ${myTeam.email}</a></li>
+              <li class="list-group-item"><a class="engineer" target="_blank" href="https://github.com/${myTeam.github}">GitHub: ${myTeam.github}</a></li>
             </ul>
         </div>`
     }
@@ -79,7 +79,7 @@ const generateTeam = myTeam => {
             </h4>
             <ul class="list-group list-group-flush card-info">
               <li class="list-group-item">ID: ${myTeam.id}</li>
-              <li class="list-group-item">Email: ${myTeam.email}</li>
+              <li class="list-group-item"><a class="intern" href="mailto:${myTeam.email}">Email: ${myTeam.email}</a></li>
               <li class="list-group-item">School: ${myTeam.school}</li>
             </ul>
         </div>`    
